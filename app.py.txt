@@ -1,0 +1,24 @@
+import streamlit as st
+import pandas as pd
+
+st.set_page_config(page_title="Soroush Global Investments", layout="wide")
+
+st.title("🌐 Soroush Global Investment Platform")
+st.markdown("### Manager: **Mohammad Hossein Soroush**")
+
+tab1, tab2 = st.tabs(["📊 Investment Portfolio", "🛂 Residence Tracking"])
+
+with tab1:
+    st.subheader("Global Portfolio Distribution ($35B)")
+    data = pd.DataFrame({
+        "Country": ["Singapore", "Malaysia", "Turkey", "India", "Sweden", "Japan", "Norway", "Switzerland"],
+        "Investment (USD Billion)": [8.75, 7.00, 5.25, 4.55, 4.20, 1.75, 1.75, 1.75]
+    })
+    st.bar_chart(data.set_index("Country"))
+    st.table(data)
+
+with tab2:
+    st.subheader("Residence & Immigration Tracking")
+    # اینجا لینک گوگل شیت خود را قرار دهید
+    st.info("System is ready to pull data from your Google Sheet.")
+	◦	
